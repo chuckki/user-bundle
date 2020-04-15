@@ -2,6 +2,7 @@
 
 namespace Chuckki\UserBundle\Classes;
 
+use Chuckki\UserBundle\Model\UserDataModel;
 use Patchwork\Utf8;
 
 class ListReferencesModule extends \Module
@@ -38,6 +39,11 @@ class ListReferencesModule extends \Module
      */
     protected function compile()
     {
+
+        $userData = UserDataModel::findAll();
+
+        dump($userData);
+
         $this->Template->message = 'Hello World';
     }
 }
